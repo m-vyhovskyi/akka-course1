@@ -5,7 +5,7 @@ using Akka.Console.Messages;
 
 namespace Akka.Console.Actors
 {
-    public class UserActor: ReceiveActor
+    public class UserActor : ReceiveActor
     {
         private string _currentlyWatching;
 
@@ -13,39 +13,37 @@ namespace Akka.Console.Actors
         {
             System.Console.WriteLine("Creating a User Actor");
 
-            Receive<PlayMovieMessage>(message => HandlePlayMovie(message));
-            Receive<StopMovieMessage>(message => HandleStopMovie());
+            ColorConsole.WriteLineCyan("Setting initial behaviour to Stopped");
+            Stopped();
         }
 
-        private void HandleStopMovie()
+        private void Playing()
         {
-            if (String.IsNullOrWhiteSpace(_currentlyWatching))
-            {
-                ColorConsole.WriteLineRed("Error: cannot stop if nothing is playing");
-            }
-            StopPlayingMovie();
+            Receive<PlayMovieMessage>(message => ColorConsole.WriteLineRed("Error: cannot start playing another movie before stopping the existing one"));
+            Receive<StopMovieMessage>(message => StopPlayingMovie());
+            ColorConsole.WriteLineCyan("User Actor has now become Playing");
 
+        }
+
+        private void Stopped()
+        {
+            Receive<PlayMovieMessage>(message => StartPlayingMovie(message.Title));
+            Receive<StopMovieMessage>(message => ColorConsole.WriteLineRed("Error: cannot stop if nothing is playing"));
+            ColorConsole.WriteLineCyan("User Actor has now become Stopped");
         }
 
         private void StopPlayingMovie()
         {
             ColorConsole.WriteLineYellow(string.Format("User has stopped watching {0}", _currentlyWatching));
             _currentlyWatching = string.Empty;
-        }
-
-        private void HandlePlayMovie(PlayMovieMessage message)
-        {
-            if (!String.IsNullOrWhiteSpace(_currentlyWatching))
-            {
-                ColorConsole.WriteLineRed("Error: cannot start playing another movie before stopping the existing one");
-            }
-            StartPlayingMovie(message.Title);
+            Become(Stopped);
         }
 
         private void StartPlayingMovie(string title)
         {
             _currentlyWatching = title;
-            ColorConsole.WriteLineYellow(string.Format("User is currently watching {0}",_currentlyWatching));
+            ColorConsole.WriteLineYellow(string.Format("User is currently watching {0}", _currentlyWatching));
+            Become(Playing);
         }
 
         protected override void PreStart()
