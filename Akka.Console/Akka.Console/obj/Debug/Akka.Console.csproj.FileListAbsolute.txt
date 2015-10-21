@@ -19,3 +19,10 @@ C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\obj\Debug\Akka.Console.ex
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\obj\Debug\Akka.Console.pdb
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Common.dll
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Common.pdb
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Remote.dll
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Google.ProtocolBuffers.dll
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Google.ProtocolBuffers.Serialization.dll
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Helios.dll
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Remote.xml
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Google.ProtocolBuffers.xml
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Google.ProtocolBuffers.Serialization.xml
