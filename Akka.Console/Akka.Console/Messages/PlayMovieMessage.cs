@@ -1,14 +1,14 @@
 ﻿namespace Akka.Console.Messages
 {
-    public class PlayMovieMessage
+    public class PlayMovieMessage: IUserMessage
     {
-        public PlayMovieMessage(string title, int age)
+        public PlayMovieMessage(string title, int userId)
         {
             Title = title;
-            Age = age;
+            UserId = userId;
         }
 
         public string Title { get; private set; }
-        public int Age { get; private set; }
+        public int UserId { get; private set; }
     }
 }

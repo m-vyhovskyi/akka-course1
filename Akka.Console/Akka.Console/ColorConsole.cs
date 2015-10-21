@@ -31,5 +31,10 @@ namespace Akka.Console
         {
             WriteLine(ConsoleColor.Cyan, message);
         }
+
+        public static void WriteLineGray(string message)
+        {
+            WriteLine(ConsoleColor.Gray, message);
+        }
     }
 }

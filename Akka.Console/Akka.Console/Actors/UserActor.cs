@@ -7,10 +7,12 @@ namespace Akka.Console.Actors
 {
     public class UserActor : ReceiveActor
     {
+        public int UserId { get; set; }
         private string _currentlyWatching;
 
-        public UserActor()
+        public UserActor(int userId)
         {
+            UserId = userId;
             System.Console.WriteLine("Creating a User Actor");
 
             ColorConsole.WriteLineCyan("Setting initial behaviour to Stopped");

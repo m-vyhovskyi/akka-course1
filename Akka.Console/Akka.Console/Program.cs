@@ -1,4 +1,6 @@
-﻿using Akka.Actor;
+﻿using System;
+using System.Threading;
+using Akka.Actor;
 using Akka.Console.Actors;
 using Akka.Console.Messages;
 using SC = System.Console;
@@ -9,34 +11,53 @@ namespace Akka.Console
     {
         static void Main(string[] args)
         {
-            var ac = ActorSystem.Create("SYS1");
+            var actorSystem = ActorSystem.Create("SYS1");
 
-            var userActorProps = Props.Create<UserActor>();
-            var userActorRef = ac.ActorOf(userActorProps, "UserActor");
+            var playbackActorProps = Props.Create<PlaybackActor>();
+            var playbackActorRef = actorSystem.ActorOf(playbackActorProps, "Playback");
 
-            SC.ReadKey();
-            SC.WriteLine("Sending a PlayMovieMessage ('AKKA.NET: The Movie'");
-            userActorRef.Tell(new PlayMovieMessage("AKKA.NET: The Movie", 32));
+            do
+            {
+                ShortPause();
 
-            SC.ReadKey();
-            SC.WriteLine("Sending another PlayMovieMessage ('Star Wars, Episode 1'");
-            userActorRef.Tell(new PlayMovieMessage("Star Wars, Episode 1", 33));
+                SC.WriteLine();
+                SC.ForegroundColor = ConsoleColor.DarkGray;
+                SC.WriteLine("enter a command and hit enter");
 
-            SC.ReadKey();
-            SC.WriteLine("Sending a StopMovieMessage");
-            userActorRef.Tell(new StopMovieMessage());
+                var command = SC.ReadLine();
+                var commandParts = command.Split(',');
 
-            SC.ReadKey();
-            SC.WriteLine("Sending another StopMovieMessage");
-            userActorRef.Tell(new StopMovieMessage());
+                if (command.StartsWith("play"))
+                {
+                    int userId = int.Parse(commandParts[1]);
+                    string title = commandParts[2];
 
-            SC.WriteLine("Actor System created");
-            
-            SC.ReadLine();
+                    var message = new PlayMovieMessage(title, userId);
+                    actorSystem.ActorSelection("/user/Playback/UserCoordinator").Tell(message);
+                }
 
-            ac.Shutdown();
-            ac.AwaitTermination();
-            SC.WriteLine("Actor System Shutdown");
+                if (command.StartsWith("stop"))
+                {
+                    int userId = int.Parse(commandParts[1]);
+
+                    var message = new StopMovieMessage(userId);
+                    actorSystem.ActorSelection("/user/Playback/UserCoordinator").Tell(message);
+                }
+
+                if (command == "exit")
+                {
+                    actorSystem.Shutdown();
+                    actorSystem.AwaitTermination();
+                    ColorConsole.WriteLineGray("Actor system shutdown");
+                    SC.ReadKey();
+                    Environment.Exit(1);
+                }
+            } while (true);
+        }
+
+        private static void ShortPause()
+        {
+            Thread.Sleep(500);
         }
     }
 }

@@ -7,4 +7,3 @@ C:\Projects\Akka\Akka.Console\Akka.Console\bin\Debug\Akka.xml
 C:\Projects\Akka\Akka.Console\Akka.Console\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\Akka\Akka.Console\Akka.Console\obj\Debug\Akka.Console.exe
 C:\Projects\Akka\Akka.Console\Akka.Console\obj\Debug\Akka.Console.pdb
-C:\Projects\Akka\Akka.Console\Akka.Console\obj\Debug\Akka.Console.csprojResolveAssemblyReference.cache

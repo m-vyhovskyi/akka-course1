@@ -8,14 +8,8 @@ namespace Akka.Console.Actors
     {
         public PlaybackActor()
         {
-            System.Console.WriteLine("A new instance of PlaybackActor is created");
-
-            Receive<PlayMovieMessage>(PlayMovie, message => message.Age > 30);
-        }
-
-        private void PlayMovie(PlayMovieMessage message)
-        {
-            ColorConsole.WriteLineYellow("Got a message: " + message.Title + " with age: " + message.Age);
+            Context.ActorOf(Props.Create<UserCoordinatorActor>(), "UserCoordinator");
+            Context.ActorOf(Props.Create<PlaybackStatisticsActor>(), "PlaybackStatistics");
         }
 
         protected override void PreStart()
@@ -30,7 +24,7 @@ namespace Akka.Console.Actors
 
         protected override void PreRestart(Exception reason, object message)
         {
-            ColorConsole.WriteLineGreen("Playback Actor PreRestart because of "+reason);
+            ColorConsole.WriteLineGreen("Playback Actor PreRestart because of " + reason);
             base.PreRestart(reason, message);
         }
 
