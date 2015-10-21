@@ -1,10 +1,32 @@
 ﻿using System;
 using Akka.Actor;
+using Akka.Console.Exceptions;
 
 namespace Akka.Console.Actors
 {
     public class PlaybackStatisticsActor : ReceiveActor
     {
+        public PlaybackStatisticsActor()
+        {
+            Context.ActorOf(Props.Create<MoviePlayCounterActor>(), "MoviePlayCounter");
+        }
+
+        protected override SupervisorStrategy SupervisorStrategy()
+        {
+            return new OneForOneStrategy(exception =>
+            {
+                if (exception is SimulatedCorruptStateException)
+                {
+                    return Directive.Restart;
+                }
+                if (exception is SimulatedTerribleMovieException)
+                {
+                    return Directive.Resume;
+                }
+                return Directive.Restart;
+            });
+        }
+
         protected override void PreStart()
         {
             ColorConsole.WriteLineGreen("Playback Statistics Actor PreStart");

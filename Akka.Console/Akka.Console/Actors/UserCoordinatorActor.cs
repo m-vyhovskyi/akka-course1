@@ -8,7 +8,7 @@ using Akka.Console.Messages;
 
 namespace Akka.Console.Actors
 {
-    public class UserCoordinatorActor:ReceiveActor
+    public class UserCoordinatorActor : ReceiveActor
     {
         private Dictionary<int, IActorRef> _users;
 
@@ -16,10 +16,8 @@ namespace Akka.Console.Actors
         {
             _users = new Dictionary<int, IActorRef>();
 
-            Receive<PlayMovieMessage>(message =>
-            {
-                PropagateMessage(message);
-            });
+            Receive<PlayMovieMessage>(message => PropagateMessage(message));
+            Receive<StopMovieMessage>(message => PropagateMessage(message));
         }
 
         private void PropagateMessage(IUserMessage message)
@@ -34,9 +32,9 @@ namespace Akka.Console.Actors
             if (!_users.ContainsKey(userId))
             {
                 var newActorChildRef = Context.ActorOf(Props.Create(() => new UserActor(userId)), "User" + userId);
-                _users.Add(userId,newActorChildRef);
+                _users.Add(userId, newActorChildRef);
 
-                ColorConsole.WriteLineCyan(string.Format("User Coordinator Actor created new child User Actor for {0} (Total users:{1})",userId, _users.Count));
+                ColorConsole.WriteLineCyan(string.Format("User Coordinator Actor created new child User Actor for {0} (Total users:{1})", userId, _users.Count));
             }
         }
 

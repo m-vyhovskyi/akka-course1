@@ -45,6 +45,7 @@ namespace Akka.Console.Actors
         {
             _currentlyWatching = title;
             ColorConsole.WriteLineYellow(string.Format("User is currently watching {0}", _currentlyWatching));
+            Context.ActorSelection("/user/Playback/PlaybackStatistics/MoviePlayCounter").Tell(new IncrementPlayCountMessage { Title = title });
             Become(Playing);
         }
 

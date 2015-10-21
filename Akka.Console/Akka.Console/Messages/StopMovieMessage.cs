@@ -1,6 +1,6 @@
 ﻿namespace Akka.Console.Messages
 {
-    public class StopMovieMessage
+    public class StopMovieMessage:IUserMessage
     {
         public int UserId { get; private set; }
 
