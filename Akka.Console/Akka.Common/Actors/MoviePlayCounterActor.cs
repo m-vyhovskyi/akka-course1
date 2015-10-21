@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 using Akka.Actor;
-using Akka.Console.Exceptions;
-using Akka.Console.Messages;
+using Akka.Common.Exceptions;
+using Akka.Common.Messages;
 
-namespace Akka.Console.Actors
+namespace Akka.Common.Actors
 {
     public class MoviePlayCounterActor : ReceiveActor
     {

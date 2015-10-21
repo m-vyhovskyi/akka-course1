@@ -1,4 +1,4 @@
-﻿namespace Akka.Console.Messages
+﻿namespace Akka.Common.Messages
 {
     public class StopMovieMessage:IUserMessage
     {

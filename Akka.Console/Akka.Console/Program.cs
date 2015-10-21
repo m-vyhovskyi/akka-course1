@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading;
 using Akka.Actor;
-using Akka.Console.Actors;
-using Akka.Console.Messages;
+using Akka.Common;
+using Akka.Common.Actors;
+using Akka.Common.Messages;
 using SC = System.Console;
 
 namespace Akka.Console
@@ -14,7 +15,7 @@ namespace Akka.Console
             var actorSystem = ActorSystem.Create("SYS1");
 
             var playbackActorProps = Props.Create<PlaybackActor>();
-            var playbackActorRef = actorSystem.ActorOf(playbackActorProps, "Playback");
+            actorSystem.ActorOf(playbackActorProps, "Playback");
 
             do
             {

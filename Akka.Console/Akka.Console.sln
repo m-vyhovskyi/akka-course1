@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Console", "Akka.Console\Akka.Console.csproj", "{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Remote", "Akka.Remote\Akka.Remote.csproj", "{1CA952C0-E8BE-4F06-BE88-85C855B32708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Common", "Akka.Common\Akka.Common.csproj", "{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA952C0-E8BE-4F06-BE88-85C855B32708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA952C0-E8BE-4F06-BE88-85C855B32708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA952C0-E8BE-4F06-BE88-85C855B32708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA952C0-E8BE-4F06-BE88-85C855B32708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

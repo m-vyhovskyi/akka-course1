@@ -17,3 +17,5 @@ C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.xml
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Newtonsoft.Json.xml
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\obj\Debug\Akka.Console.exe
 C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\obj\Debug\Akka.Console.pdb
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Common.dll
+C:\Repositories\Akka\Course1\Akka.Console\Akka.Console\bin\Debug\Akka.Common.pdb

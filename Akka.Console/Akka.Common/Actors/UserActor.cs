@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Akka.Actor;
-using Akka.Console.Messages;
 
-namespace Akka.Console.Actors
+using Akka.Actor;
+using Akka.Common.Messages;
+
+namespace Akka.Common.Actors
 {
     public class UserActor : ReceiveActor
     {
