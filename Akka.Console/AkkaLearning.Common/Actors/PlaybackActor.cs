@@ -1,8 +1,7 @@
 ﻿using System;
-
 using Akka.Actor;
 
-namespace Akka.Common.Actors
+namespace AkkaLearning.Common.Actors
 {
     public class PlaybackActor : ReceiveActor
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading;
 using Akka.Actor;
-using Akka.Common;
-using Akka.Common.Actors;
-using Akka.Common.Messages;
+using AkkaLearning.Common;
+using AkkaLearning.Common.Actors;
+using AkkaLearning.Common.Messages;
 using SC = System.Console;
 
-namespace Akka.Console
+namespace AkkaLearning.Console
 {
     class Program
     {

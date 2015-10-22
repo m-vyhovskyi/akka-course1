@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Console", "Akka.Console\Akka.Console.csproj", "{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaLearning.Console", "AkkaLearning.Console\AkkaLearning.Console.csproj", "{5CFDFAA0-A5E4-4581-8B63-FF98DE99D48C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Remote", "Akka.Remote\Akka.Remote.csproj", "{1CA952C0-E8BE-4F06-BE88-85C855B32708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaLearning.Remote", "AkkaLearning.Remote\AkkaLearning.Remote.csproj", "{1CA952C0-E8BE-4F06-BE88-85C855B32708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Common", "Akka.Common\Akka.Common.csproj", "{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkkaLearning.Common", "AkkaLearning.Common\AkkaLearning.Common.csproj", "{A1293AD8-22A0-4FB6-A259-AC7118BFCC52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

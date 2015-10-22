@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Akka.Actor;
-using Akka.Common.Messages;
+using AkkaLearning.Common.Messages;
 
-namespace Akka.Common.Actors
+namespace AkkaLearning.Common.Actors
 {
     public class UserCoordinatorActor : ReceiveActor
     {

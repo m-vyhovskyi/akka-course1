@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Akka.Common
+namespace AkkaLearning.Common
 {
     public static class ColorConsole
     {

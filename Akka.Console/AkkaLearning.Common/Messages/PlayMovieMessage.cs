@@ -1,4 +1,4 @@
-﻿namespace Akka.Common.Messages
+﻿namespace AkkaLearning.Common.Messages
 {
     public class PlayMovieMessage: IUserMessage
     {
